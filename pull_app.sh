@@ -11,12 +11,12 @@ cd /var/www/
 
 if [ -z "$GIT_PATH" ]
   then
-    git clone -v $GITHUB_REPO .
+    git clone $GITHUB_REPO --branch $GIT_BRANCH --single-branch .
   else
-    git clone -n $GITHUB_REPO .
+    git clone -n $GITHUB_REPO --branch $GIT_BRANCH --single-branch .
     git config core.sparseCheckout true
     echo "$GIT_PATH" >> .git/info/sparse-checkout
-    git checkout -v $GIT_BRANCH
+    git checkout $GIT_BRANCH
     mv /var/www/$GIT_PATH/* /var/www/
 fi
 
