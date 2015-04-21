@@ -1,17 +1,8 @@
 server {
   listen 80 default_server;
   listen [::]:80 default_server ipv6only=on;
-
-  root /var/www/public;
-  
+  root /home/app/webapp/public;
   passenger_enabled on; 
-  passenger_user app; 
-  passenger_ruby /usr/bin/ruby2.2;
-
-
   index index.html index.htm;
  
-  location / {
-    try_files $uri $uri/ =404;
-  }
 }

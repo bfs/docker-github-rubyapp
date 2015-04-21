@@ -2,7 +2,7 @@ FROM phusion/passenger-ruby22
 
 RUN DEBIAN_FRONTEND=noninteractive; apt-get update; apt-get -y upgrade;
 
-RUN mkdir -p /var/www/
+RUN mkdir -p /home/app/webapp
 
 RUN rm -f /etc/service/nginx/down
 
