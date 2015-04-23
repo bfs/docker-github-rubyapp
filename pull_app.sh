@@ -20,6 +20,9 @@ if [ -z "$GIT_PATH" ]
     mv /home/app/webapp/$GIT_PATH/* /home/app/webapp
 fi
 
+
+ruby -e 'ENV.map{|e| puts "env #{e.first};"}' > /etc/nginx/main.d/rb_env.conf
+
 bundle install
 
 chown -R app /home/app/webapp
